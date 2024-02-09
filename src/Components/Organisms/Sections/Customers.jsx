@@ -139,14 +139,14 @@ export default function Customers() {
                 <tr key={index} className="bg-white ">
                   <th
                     scope="row"
-                    className="px-[10px] py-4 font-semibold text-[#110D17] text-sm font-quicksand"
+                    className="px-[10px] py-3 font-semibold text-[#110D17] text-sm font-quicksand"
                   >
                     {customer.name}
                   </th>
-                  <td className="px-[10px] py-4 "><LevelBadge level={customer.level} /></td>
-                  <td className="px-[10px] py-4 font-semibold text-[#110D17] text-sm font-quicksand">{customer.favorite_menu}</td>
-                  <td className="px-[10px] py-4 font-semibold text-[#110D17] text-sm font-quicksand">{customer.total_transaction}</td>
-                  <td className="px-[10px] py-4 font-semibold text-[#110D17] text-sm font-quicksand flex flex-row gap-1 justify-between">
+                  <td className="px-[10px] py-3 "><LevelBadge level={customer.level} /></td>
+                  <td className="px-[10px] py-3 font-semibold text-[#110D17] text-sm font-quicksand">{customer.favorite_menu}</td>
+                  <td className="px-[10px] py-3 font-semibold text-[#110D17] text-sm font-quicksand">{customer.total_transaction}</td>
+                  <td className="px-[10px] py-3 font-semibold text-[#110D17] text-sm font-quicksand flex flex-row gap-1 justify-between">
                     <button className="flex flow-row items-center gap-2 bg-[#FAFAFA] rounded-lg py-1 px-3 font-semibold text-sm">
                       <img src="./asset/shield-search.svg" alt="" />
                       Detail
@@ -182,15 +182,15 @@ export default function Customers() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 justify-between rounded-lg">
-          <div className="flex flex-col justify-between bg-cover bg-center h-[265px] w-[227px] rounded-lg p-4" style={{ backgroundImage: "url('/asset/square-right.svg')" }}>
+        <div className="flex flex-col gap-4  rounded-lg">
+          <div className="flex flex-col justify-between bg-cover bg-center h-[260px] w-[227px] rounded-lg p-4" style={{ backgroundImage: "url('/asset/square-right.svg')" }}>
             <h1 className="font-quicksand font-semibold leading-[30px] text-xl text-[#ffffff] w-40">See analytics of the Customer Clearly</h1>
             <button className="w-fit font-quicksand font-semibold leading-[21px] text-sm text-[#ffffff] px-4 py-2 rounded-lg bg-[#ffffff] bg-opacity-20 hover:bg-opacity-50">
               See Analytics
             </button>
           </div>
 
-          <div className="rounded-lg bg-[#FAFAFA] flex flex-col justify-between w-[227px] h-full">
+          <div className="rounded-lg bg-[#FAFAFA] flex flex-col  w-[227px]">
             <div className="p-4">
               <div className="flex flex-col gap-3">
                 <h1 className="font-quicksand text-2xl">Top Menu <br /><strong className="font-bold text-[#F17300]">This Week</strong></h1>
