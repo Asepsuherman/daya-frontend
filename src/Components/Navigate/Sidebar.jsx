@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function Sidebar({ activeMenu }) {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   const menuItems = [
-    { name: 'Dashboard', endpoint: '/', icon: 'asset/category-2.svg' },
+    { name: 'Dashboard', endpoint: '/', icon: 'asset/category-2.svg', othericon: 'asset/notif.png' },
     { name: 'Stock', endpoint: '/stock', icon: 'asset/battery-full.svg' },
     { name: 'Customers', endpoint: '/customers', icon: 'asset/profile-2user.svg' },
     { name: 'Restaurant', endpoint: '/restaurant', icon: 'asset/reserve.svg' },
@@ -36,7 +36,7 @@ export default function Sidebar({ activeMenu }) {
                   <Link
                     key={item.name}
                     to={item.endpoint}
-                    className={`flex items-center font-quicksand font-bold text-sm py-2 ${activeMenu === item.endpoint ? 'text-[#5D5FEF]' : ''
+                    className={`flex items-center font-quicksand font-bold text-sm py-2 gap-3 relative ${activeMenu === item.endpoint ? 'text-[#5D5FEF]' : ''
                       }`}
                     onClick={() => {
                       navigate(item.endpoint);
@@ -46,12 +46,17 @@ export default function Sidebar({ activeMenu }) {
                     <img
                       src={item.icon}
                       alt={`${item.name} Icon`}
-                      className={`mr-2 ${isButtonClicked || activeMenu === item.endpoint
+                      className={`${isButtonClicked || activeMenu === item.endpoint
                         ? 'text-[#5D5FEF]'
                         : ''
                         }`}
                     />
                     {item.name}
+                    <img
+                      src={item.othericon}
+                      alt={`${item.name} Icon2`}
+                      className="absolute right-0 "
+                    />
                   </Link>
                 ))}
               </div>
