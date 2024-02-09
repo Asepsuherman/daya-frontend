@@ -11,8 +11,7 @@ export default function Page({ children }) {
 
   useEffect(() => {
     location.pathname === '/' ? setSelectedMenu('dashboard') : setSelectedMenu(location.pathname)
-
-    console.log(location)
+    // console.log(location)
   }, [location])
 
   return (

@@ -18,7 +18,7 @@ export default function Customers() {
     fetchCustomers();
   }, []);
 
-  console.log(customers)
+  // console.log(customers)
 
   return (
     <section className="flex flex-col gap-4 absolute left-[200px] top-0 p-6">

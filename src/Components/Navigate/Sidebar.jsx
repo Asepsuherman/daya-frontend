@@ -32,31 +32,42 @@ export default function Sidebar({ activeMenu }) {
             <ul className="flex flex-col gap-2  text-[#98949E]">
               <h4 className="font-satoshi text-[10px]">Menu</h4>
               <div className="flex flex-col gap-3">
-                {menuItems.map((item) => (
+                {menuItems.map((item, index) => (
                   <Link
                     key={item.name}
                     to={item.endpoint}
-                    className={`flex items-center font-quicksand font-bold text-sm py-2 gap-3 relative ${activeMenu === item.endpoint ? 'text-[#5D5FEF]' : ''
-                      }`}
+                    className={`flex items-center font-quicksand font-bold text-sm py-2 gap-3 relative ${activeMenu === item.endpoint ? 'text-[#5D5FEF]' : ''}`}
                     onClick={() => {
+                      console.log('Active Menu:', item.endpoint); // tambahkan log ini
                       navigate(item.endpoint);
-                      setIsButtonClicked(false);
+                      setIsButtonClicked(true);
                     }}
                   >
-                    <img
-                      src={item.icon}
-                      alt={`${item.name} Icon`}
-                      className={`${isButtonClicked || activeMenu === item.endpoint
-                        ? 'text-[#5D5FEF]'
-                        : ''
-                        }`}
-                    />
+                    {index === 0 && item.name === 'Dashboard' ? (
+                      <>
+                        <img
+                          src={item.icon}
+                          alt={`${item.name} Icon`}
+                          className={`mr-2 ${isButtonClicked || activeMenu === item.endpoint
+                            ? 'text-[#5D5FEF]'
+                            : ''
+                            }`}
+                        />
+
+                        <img
+                          src={item.othericon}
+                          alt={`${item.name} Icon2`}
+                          className="absolute right-0"
+                        />
+                      </>
+                    ) : (
+                      <img
+                        src={item.icon}
+                        alt={`${item.name} Icon`}
+                        className={`${isButtonClicked || activeMenu === item.endpoint ? 'text-[#5D5FEF]' : ''}`}
+                      />
+                    )}
                     {item.name}
-                    <img
-                      src={item.othericon}
-                      alt={`${item.name} Icon2`}
-                      className="absolute right-0 "
-                    />
                   </Link>
                 ))}
               </div>
@@ -99,10 +110,10 @@ export default function Sidebar({ activeMenu }) {
               <p className="font-satoshi font-normal text-[10px] text-[#98949E]">Food Quality Manager</p>
             </div>
           </div>
-          <bu className="bg-[#FEF5F6] rounded p-2 flex flex-row gap-2 items-center justify-center hover:bg-[#8F0A13] hover:bg-opacity-20">
+          <button className="bg-[#FEF5F6] rounded p-2 flex flex-row gap-2 items-center justify-center hover:bg-[#8F0A13] hover:bg-opacity-20">
             <img src="./asset/logout.svg" alt="Logout-Icon" />
             <h3 className="font-quicksand font-semibold text-xs text-[#8F0A13]">Logout</h3>
-          </bu>
+          </button>
         </div>
       </div>
     </div>
