@@ -173,7 +173,7 @@ export default function Customers() {
                 <button className="px-4 py-2">3</button>
                 <button className="px-4 py-2">...</button>
                 <button className="px-4 py-2">38</button>
-                <button className="px-4 py-2 flex flex-row gap-2 ">
+                <button className="px-4 py-2 flex flex-row gap-2 items-center">
                   <h3>Next</h3>
                   <img src="./asset/arrow.svg" alt="" />
                 </button>
