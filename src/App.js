@@ -10,6 +10,7 @@ import Report from './Components/Organisms/Sections/Report';
 import RoleAndAdmin from './Components/Organisms/Sections/RoleAndAdmin';
 import Settings from './Components/Organisms/Sections/Settings';
 import Supply from './Components/Organisms/Sections/Supply';
+import Instock from './Components/Organisms/Sections/Instock';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/report" element={<Report />} />
             <Route path="/roleandadmin" element={<RoleAndAdmin />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/instock" element={<Instock />} />
             <Route path="/supply" element={<Supply />} />
           </Routes>
         </Page>
